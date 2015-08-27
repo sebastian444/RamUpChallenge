@@ -1,15 +1,11 @@
 # RamUpChallenge
 
 # Author: Sebastián Lara
-as
-Briefly explain what is your app about: It´s an app that was build for those who are starting a design and want a color palette to start with. Let the colors inspire your moment.
 
-Screenshots: 
 
- 	 
- 	 
+Briefly explain what is your app about: It´s an app that was build for those who are starting a design and want a color palette to start with. Let the colors inspire your moment. 	 
 
-Demo: 
+Demo: http://sebastian444.github.io/RamUpChallenge
 
 Git Hub for root files: 
 
