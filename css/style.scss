@@ -1,0 +1,250 @@
+$color-white: #ffffff;
+$color-almost-white: #fcfcfc;
+$color-gray-light: #e6e6e6;
+$color-gray-normal:  #666666;
+$color-gray-dark:  #333333;
+$color-blue: #69D2E7;
+
+$vendors: webkit moz ms o khtml;
+
+@mixin prefix($property, $value) {
+  @if $vendors {
+    @each $vendor in $vendors {
+      #{"-" + $vendor + "-" + $property}: #{$value};
+    }
+  }
+  #{$property}: #{$value};
+}
+
+@mixin placeholder {
+  &.placeholder { @content }
+  &:-moz-placeholder { @content }
+  &::-webkit-input-placeholder { @content }
+}
+
+@mixin box-sizing($value) {
+	@include prefix('box-sizing', $value);
+}
+
+@mixin border-radius($value) {
+	@include prefix('border-radius', $value);
+}
+
+@mixin transition($value) {
+	@include prefix('transition', $value);
+}
+
+@mixin transform($value) {
+	@include prefix('transform', $value);
+}
+
+@mixin transform-origin($value) {
+	@include prefix('transform-origin', $value);
+}
+
+@mixin opacity($value) {
+	@include prefix('opacity', #{"0."+$value});
+	-ms-filter: #{"'progid:DXImageTransform.Microsoft.Alpha(Opacity="+$value+"0)'"};
+	filter: alpha(opacity=#{$value}0);
+}
+
+@mixin filter($value) {
+	@include prefix('filter', $value);
+}
+
+* {
+	@include box-sizing('border-box');
+}
+
+*:focus {
+	outline: none;
+}
+
+body {
+	font: 10px 'Helvetica', 'Arial', ;
+}
+
+.va-m {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.widthWrap {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+.ui-widget-overlay {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index: 10001;	
+	background: #444444;
+	@include opacity(8);
+}
+
+.header {
+	@extend .widthWrap;
+	background: $color-gray-light;
+	position: relative;
+	text-align: left;
+	
+	* {
+		@extend .va-m;
+	}
+
+	h1 {
+		color: $color-gray-normal;
+		font-size: 3em;
+		margin: 0.6em 1em; 
+	}
+
+	input[type=text] {
+		width: 30%;
+		padding: 0 20px;
+		border: none;
+		height: 2em;
+		font-size: 2em;
+		background-color: $color-almost-white;
+		color: $color-gray-normal;
+		@include transition(all 1s);
+
+		&:focus {
+			background-color: $color-gray-normal;
+			color: $color-white;
+			@include placeholder {
+				color: $color-white;
+			}
+		}
+	}
+}
+
+#master {
+	@extend .widthWrap;
+
+	.item {
+		position: relative;
+		float: left;
+		width: 20%;
+		height: 200px;
+		overflow: hidden;
+		border: 4px solid $color-white;
+		@include transform(scale(1));
+		@include transition(all 0.5s);
+
+		&:hover {
+			border-color: $color-gray-normal;
+			@include transform(scale(1.1));
+			z-index: 1000;
+			cursor: pointer;
+		}
+
+		&.active {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height:  100%;
+			z-index: 1000;
+			font-size: 20px;
+
+			&.active:hover{
+				@include transform(scale(1));
+			}
+
+			.close {
+				display: block;
+			}
+		}
+
+		.stripe {
+			position: relative;
+			float: left;
+			width: 20%;
+			height: 100%;
+
+			p {
+				color: #fff;
+			    font-size: 2em;
+			    margin: 0;
+			    position: absolute;
+			    left: 10%;
+			    bottom: 5%;
+			    @include transform(rotate(-90deg));
+			    @include transform-origin(0 0);
+			    @include opacity(6); 
+			}		
+		}
+
+		.bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: center;			
+			@include opacity(2);
+			@include filter(grayscale(100%));
+		}
+
+		.txt {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 5px 10px;
+			color: $color-gray-normal;
+			background: $color-gray-light;
+			text-align: center;
+			font-size: 1.5em;
+			text-transform: capitalize;
+			font-style: italic;
+			margin: 0;
+		}
+
+		.close {
+			position: absolute;
+			top: 1em;
+			right: 1em;
+			z-index: 1000;
+			@include border-radius(100px);
+			width: 1.5em;
+			height: 1.5em;
+			font-size: 1.5em;
+			line-height: 1.5em;
+			font-weight: bold;
+			text-align: center;
+			text-decoration: none;
+			color: $color-white;
+			background: $color-gray-dark;
+			border: 2px solid $color-gray-light;	
+			display: none;
+		}
+	}
+
+	h1 {
+		@extend .widthWrap;
+		margin: 0;
+		padding: 1em;
+		font-size: 3em;
+		text-align: left;
+		color: $color-blue;
+	}
+
+	h2 {
+		@extend .widthWrap;
+		margin: 0;
+		padding: 0 1em 1em;
+		font-size: 3em;
+		text-align: left;
+		color: $color-blue;
+	}
+}
+
+
+@import "responsive";
+

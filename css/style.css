@@ -1,0 +1,244 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*:focus {
+  outline: none; }
+
+body {
+  font: 10px "Helvetica", "Arial"; }
+
+.va-m, .header * {
+  display: inline-block;
+  vertical-align: middle; }
+
+.widthWrap, .header, #master, #master h1, #master h2 {
+  position: relative;
+  float: left;
+  width: 100%; }
+
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+  background: #444444;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  -ms-opacity: 0.8;
+  -o-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';
+  filter: alpha(opacity=80); }
+
+.header {
+  background: #e6e6e6;
+  position: relative;
+  text-align: left; }
+  .header h1 {
+    color: #666666;
+    font-size: 3em;
+    margin: 0.6em 1em; }
+  .header input[type=text] {
+    width: 30%;
+    padding: 0 20px;
+    border: none;
+    height: 2em;
+    font-size: 2em;
+    background-color: #fcfcfc;
+    color: #666666;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    -khtml-transition: all 1s;
+    transition: all 1s; }
+    .header input[type=text]:focus {
+      background-color: #666666;
+      color: #ffffff; }
+      .header input[type=text]:focus.placeholder {
+        color: #ffffff; }
+      .header input[type=text]:focus:-moz-placeholder {
+        color: #ffffff; }
+      .header input[type=text]:focus::-webkit-input-placeholder {
+        color: #ffffff; }
+
+#master .item {
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 200px;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  -khtml-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -khtml-transition: all 0.5s;
+  transition: all 0.5s; }
+  #master .item:hover {
+    border-color: #666666;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -khtml-transform: scale(1.1);
+    transform: scale(1.1);
+    z-index: 1000;
+    cursor: pointer; }
+  #master .item.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    font-size: 20px; }
+    #master .item.active.active:hover {
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      -khtml-transform: scale(1);
+      transform: scale(1); }
+    #master .item.active .close {
+      display: block; }
+  #master .item .stripe {
+    position: relative;
+    float: left;
+    width: 20%;
+    height: 100%; }
+    #master .item .stripe p {
+      color: #fff;
+      font-size: 2em;
+      margin: 0;
+      position: absolute;
+      left: 10%;
+      bottom: 5%;
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      -khtml-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      -webkit-transform-origin: 0 0;
+      -moz-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+      -o-transform-origin: 0 0;
+      -khtml-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-opacity: 0.6;
+      -moz-opacity: 0.6;
+      -ms-opacity: 0.6;
+      -o-opacity: 0.6;
+      -khtml-opacity: 0.6;
+      opacity: 0.6;
+      -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=60)';
+      filter: alpha(opacity=60); }
+  #master .item .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    -webkit-opacity: 0.2;
+    -moz-opacity: 0.2;
+    -ms-opacity: 0.2;
+    -o-opacity: 0.2;
+    -khtml-opacity: 0.2;
+    opacity: 0.2;
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=20)';
+    filter: alpha(opacity=20);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -khtml-filter: grayscale(100%);
+    filter: grayscale(100%); }
+  #master .item .txt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 10px;
+    color: #666666;
+    background: #e6e6e6;
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    font-style: italic;
+    margin: 0; }
+  #master .item .close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 1000;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+    -khtml-border-radius: 100px;
+    border-radius: 100px;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background: #333333;
+    border: 2px solid #e6e6e6;
+    display: none; }
+#master h1 {
+  margin: 0;
+  padding: 1em;
+  font-size: 3em;
+  text-align: left;
+  color: #69D2E7; }
+#master h2 {
+  margin: 0;
+  padding: 0 1em 1em;
+  font-size: 3em;
+  text-align: left;
+  color: #69D2E7; }
+
+@media screen and (max-width: 1024px) {
+  #master .item {
+    width: 25%; } }
+@media screen and (max-width: 700px) {
+  #master .item {
+    width: 50%; }
+    #master .item.active {
+      font-size: 17px; }
+  #master h1 {
+    font-size: 2em; }
+
+  .header h1 {
+    font-size: 2em;
+    margin: 0.6em 5%; }
+  .header input[type=text] {
+    width: 90%;
+    margin: 0 5%; } }
+@media screen and (max-width: 400px) {
+  #master .item {
+    width: 100%; }
+    #master .item.active {
+      font-size: 15px; } }
+
+/*# sourceMappingURL=style.css.map */

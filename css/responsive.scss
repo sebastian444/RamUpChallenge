@@ -1,0 +1,54 @@
+$break-small: 400px;
+$break-medium: 700px;
+$break-large: 1024px;
+
+@media screen and (max-width: $break-large) {
+	#master {
+		.item {
+			width: 25%;
+		}
+	}
+}
+
+@media screen and (max-width: $break-medium) {
+	#master {
+
+		.item {
+			width: 50%;
+
+			&.active {
+				font-size: 17px;
+			}
+		}
+
+		h1 {
+			font-size: 2em;
+		}
+		
+	}
+
+	.header {
+		h1 {
+			font-size: 2em;
+			margin: 0.6em 5%;
+		}
+
+		input[type=text] {
+			width: 90%;
+			margin: 0 5%;
+		}
+	}
+}
+
+@media screen and (max-width: $break-small) {	
+	#master {
+
+		.item {
+			width: 100%;
+
+			&.active {
+				font-size: 15px;
+			}
+		}
+	}
+}
